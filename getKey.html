@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>encrypt and send with js/ajax/php</title>
+
+    <script src="sha1.js" type="text/javascript"></script>
+    <script src="base64.js" type="text/javascript"></script>
+    <script src="PGpubkey.js" type="text/javascript"></script>
+
+    <script src="extractKey.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    
+    <form name="s" action="javascript:getkey()">
+      <div>
+	
+	<textarea name="pubkey" rows=14 cols=90></textarea>
+	<br>
+
+	<input type=submit value="Get Public Key Information">
+	<br>
+	
+	Version: <input size="40" name="vers" readonly>
+	<br>
+	
+	User ID: <input size=40 name="user" readonly>
+	<br>
+	
+	Key ID (8 bytes in hex): <input size=40 name="keyid" readonly>
+	
+	Public Key type and values: <input size=40 name="pktype" readonly>
+	<br>
+	
+	<input size=100 name="pkey" readonly>
+      </div>
+    </form>
+  </body>
+</html>
