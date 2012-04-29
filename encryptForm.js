@@ -21,9 +21,9 @@ function send(cryptoText, server){
 }
 
 function encryptAndSend(){
-    var plain = document.t.text.value+'\r\n';
+    var plain = document.getElementById('text').value+'\r\n';
     var cipher = encrypt(plain);
-    document.t.text.value = cipher;
+    document.getElementById('text').value = cipher;
     send(cipher, 'send.php');
     return;
 }

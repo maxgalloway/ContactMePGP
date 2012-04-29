@@ -1,5 +1,5 @@
 <?php
-require('config.php');
+require('install/config.php');
 
 $result = mail($GLOBALS['recipient'], 'test email', $_POST['message']);
 

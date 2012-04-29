@@ -10,15 +10,15 @@
     <script type="text/javascript" src="js_lib/mouse.js"></script>
     <script type="text/javascript" src="js_lib/PGencode.js"></script>
 
-    <script type="text/javascript" src="config.js"></script>
+    <script type="text/javascript" src="install/config.js"></script>
     <script type="text/javascript" src="encryptForm.js"></script>
   </head>
 
   <body>
 
-    <form name="t" action="javascript:encryptAndSend()">
+    <form name="transmit" action="javascript:encryptAndSend()">
       <div>
-	<textarea name="text" rows=16 cols="90"></textarea>
+	<textarea id="text" rows=16 cols="90"></textarea>
 	<br>
 	<input type=submit value="Encrypt Message">
       </div>

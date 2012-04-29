@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>encrypt and send with js/ajax/php</title>
+
+    <script src="sha1.js" type="text/javascript"></script>
+    <script src="../js_lib/base64.js" type="text/javascript"></script>
+    <script src="PGpubkey.js" type="text/javascript"></script>
+
+    <script src="extractKey.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    
+    <form name="putKey" action="javascript:getkey()">
+      <div>
+	
+	<textarea id="pubkeyBlock" rows=14 cols=90></textarea>
+	<br>
+
+	<input type=submit value="Get Public Key Information">
+      </div>
+    </form>
+    
+      <div>
+	Version: <input size="40" id="vers" readonly>
+	<br>
+	
+	User ID: <input size=40 id="pkUser" readonly>
+	<br>
+	
+	Key ID (8 bytes in hex): <input size=40 id="pKeyid" readonly>
+	
+	Public Key type: <input size=40 id="pktype" readonly>
+	<br>
+	
+	Public Key value:<input size=100 id="pkey" readonly>
+
+	<p>
+	  If everything looks right, paste this info into config.js in
+	  this file's directory. 
+	</p>
+      </div>
+
+  </body>
+</html>
