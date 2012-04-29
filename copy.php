@@ -1,7 +1,6 @@
 <?php
-require('config.php');
 
-$result = mail($GLOBALS['recipient'], 'test email', $_POST['message']);
+$result = mail('maxvgc@gmail.com', 'test email', 'it is a message');
 
 if($result == 1)
 echo 'sending to '.$GLOBALS['recipient'].' succeeded.';
