@@ -15,12 +15,36 @@
   </head>
 
   <body>
+    <noscript>
+      <p>You need to turn on javascript. This function is completely
+      usesless without it.</p>
+    </noscript>
 
-    <form name="transmit" action="javascript:encryptAndSend()">
+    <form name="encode" action="javascript:encrypt('text')">
       <div>
+	
 	<textarea id="text" rows=16 cols="90"></textarea>
 	<br>
-	<input type=submit value="Encrypt Message">
+	
+	<input type="submit" value="Encrypt Message">
+      </div>
+    </form>
+    
+    <form name="transmit" action="javascript:send('text','send.php','answer')">
+      <div>
+	<script type="text/javascript">
+	  <!--
+document.write('<img id="siimage" src="./secImg/securimage_show.php?sid=' 
++ Math.random()
++'" alt="This is the alt for the captcha: It does not help much.">');
+	//-->
+	</script>
+	<br>
+
+	<input type="text" id="answer">
+	<br>
+	
+	<input type="submit" value="send">
       </div>
     </form>
 
