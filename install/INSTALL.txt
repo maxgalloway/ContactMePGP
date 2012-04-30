@@ -1,13 +1,12 @@
-// Key ID (8 bytes in hex)
-var keyid = '8ea9a23752aedf4f';
+There are two files that needs variables filled in. 
+1. config.js
+2. config.php
 
-// Public Key type
-var keytyp = 0;
+The latter needs only your email address. To get the values for
+config.js, use the tool provided by index.html in this directory.
 
-// Public Key Value 
-var pubkey = 'CADfZp/jwAP5n1X5VH/qTt+d24D/oOLS03IfDODcZw7zO8FpoV9t62Pp7m/WkrTHHfL0PlyQygoYAebdnAbZnTUux/FXtnz4abXRBISUYQq0qNNtxe3FuAdImV3NFZQ+gakYSEaXX1iycGl4ZlWV7Tpz4x0A1VLEg3DyvbOfEyHPJcNa2z9Crl5s1FwgSsx1WcnZJ1pb30/L1/aktYsGV472VLonVutgOpG487EoxBXHsuiPDBepY5XH/1s2s1g3+oNDIupywts2Ny3FpSK5aqIy51ArhPhVxfB5qdcjTo1I3Oavpy5BH4v41B7zuDjem2NDekARHAMUW0T0fr09PogxABEBAAE';
+Once you fill in these values, it should just work.
 
-/**
 Copyright (C) 2012 Max Galloway-Carson maxvgc@gmail.com
 
 This file is part of ContactMePGP.
@@ -24,4 +23,3 @@ GNU Affero General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/

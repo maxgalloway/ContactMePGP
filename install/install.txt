@@ -1,8 +1,0 @@
-There are two files that needs variables filled in. 
-1. config.js
-2. config.php
-
-The latter needs only your email address. To get the values for
-config.js, use the tool provided by index.html in this directory.
-
-Once you fill in these values, it should just work.
