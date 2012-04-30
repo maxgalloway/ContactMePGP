@@ -1,4 +1,8 @@
 /**
+
+This file uses a whole lot of ajax to submit the data to the server,
+and interpret the error (or success) codes.
+
 Copyright (C) 2012 Max Galloway-Carson maxvgc@gmail.com
 
 This file is part of ContactMePGP.
@@ -17,34 +21,56 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+/*
+This function sends "message" to "server" to be sent if "answer" is
+correct. The server will reply with only http status codes, so this
+function will also interpret those. Note that "message" and "answer"
+are not the actual values, but rather the IDs of the dom elements
+containing the relevant info.
+*/
 function send(message, server, answer){
-    var mesg = document.getElementById(message); // store dom element
-    var ans = document.getElementById(answer); // store dom element
+    // these two dom elements may be used again, so they are stored.
+    var mesg = document.getElementById(message); 
+    var ans = document.getElementById(answer); 
+
+    // retrieve data from elements
     var cryptoText = mesg.value;
     var challenge = ans.value;
+
+    // begin the ajax party
     var xmlhttp = new XMLHttpRequest();
     
-    xmlhttp.onreadystatechange=function()
-    {
-	if (xmlhttp.readyState==4){
+    xmlhttp.onreadystatechange=function(){
+
+	if (xmlhttp.readyState==4){// response is in...
+
+	    // address each possible response code
 	    switch(xmlhttp.status){
 
+	    // captcha is good and message is sent
 	    case 200:
 		document.getElementById("response").innerHTML
 		    ='message sent';
+
+		// reset everything to prevent resubmission
 		mesg.value = '';
 		ans.value = '';
 		reloadCaptcha();
 		break;
 
+	    // captcha was bad
 	    case 403:
 		reloadCaptcha();
 		document.getElementById("response").innerHTML
 		    ='incorrect captcha';
+		
+		// try again on new image
 		reloadCaptcha();
 		ans.value = '';
 		break;
 
+	    // captcha is good, but message not sent. (???)
 	    default:
 		document.getElementById("response").innerHTML
 		    ='something went wrong, try again';
@@ -52,6 +78,7 @@ function send(message, server, answer){
 	}
     }
     
+    // following code posts ciphertext and challenge to server
     xmlhttp.open("POST", server, true);
     xmlhttp.setRequestHeader("Content-type",
 			     "application/x-www-form-urlencoded");
@@ -60,13 +87,14 @@ function send(message, server, answer){
     
 }
 
-
+// encrypt the text from the form, and update it in place
 function encrypt(text){
     var plain = document.getElementById(text).value+'\r\n';
     var cipher = doEncrypt(keyid, keytyp, pubkey, plain);
     document.getElementById(text).value = cipher;
 }
 
+// generate a new captcha
 function reloadCaptcha()
 {
     document.getElementById('siimage').src = 

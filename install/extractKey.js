@@ -1,4 +1,8 @@
 /**
+
+This file will parse out your public key's information, and populate
+the fields in index.html. (which you will use to fill in config.js
+
 Copyright (C) 2012 Max Galloway-Carson maxvgc@gmail.com
 
 This file is part of ContactMePGP.
@@ -21,11 +25,15 @@ var keytyp = -1;
 var keyid  = '';
 var pubkey = '';
 
+// function that does all the work
 function getkey()
 {
+    // get public key from form
     var pu=new getPublicKey(document.getElementById('pubkeyBlock').value);
- if(pu.vers == -1) return;
 
+    if(pu.vers == -1) return; // fail if something is wrong
+
+    // populate fields in index.html
     document.getElementById('vers').value=pu.vers;
     document.getElementById('pkUser').value=pu.user;
     document.getElementById('pKeyid').value=pu.keyid;

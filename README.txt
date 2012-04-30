@@ -7,7 +7,10 @@ the owner of the world's only fax machine. So I created this program.
 
 But by embedding this webform on your website, anyone can send you
 private messages. The algorithms are implemented in javascript, so
-people can contact you without installing anything.
+people can contact you without installing anything. Because the
+encryption and form submission is implemented in human-readable js,
+the user can be sure that there isn't anything suspect going on
+(submitting the plain text to the server, for example).
 
 To get started, navigate to the index.html in the install
 directory. Then fill in the corresponding values in config.js, and put
