@@ -1,5 +1,6 @@
 <?php
-$GLOBALS['recipient'] = 'maxvgc@gmail.com';
+$GLOBALS['recipient'] = 'you@example.com';
+
 /**
 Copyright (C) 2012 Max Galloway-Carson maxvgc@gmail.com
 
