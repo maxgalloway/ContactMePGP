@@ -18,7 +18,7 @@ your email address in config.php. Then you can embed contents of
 index.html (in this directory) anywhere, and watch those emails fly
 in.
 
-Copyright (C) 2012 Max Galloway-Carson maxvgc@gmail.com
+Copyright (C) 2016 Max Galloway webmaster@pwipw.com
 
 This file is part of ContactMePGP.
     
